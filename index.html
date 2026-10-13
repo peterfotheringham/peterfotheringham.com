@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Peter Fotheringham</title>
+<meta name="description" content="Peter Fotheringham — product and technology leader in London. Head of Solutions Technology at The Smarty Train. Founder of Obsrvr. Cambridge PhD.">
+<meta property="og:title" content="Peter Fotheringham">
+<meta property="og:description" content="Product and technology leader in London. Building tools where learning, data and people meet.">
+<meta property="og:url" content="https://peterfotheringham.com/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://peterfotheringham.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f4;
+    --surface: #ffffff;
+    --text: #1c1b19;
+    --muted: #6b675f;
+    --line: #e6e1d7;
+    --accent: #c2410c;
+    --accent-soft: #fdeee6;
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141312;
+      --surface: #1c1b19;
+      --text: #f1eee8;
+      --muted: #a39e94;
+      --line: #2e2c28;
+      --accent: #fb923c;
+      --accent-soft: #2a1d14;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 0; }
+  nav .mark { font-family: var(--serif); font-weight: 600; font-size: 20px; text-decoration: none; }
+  nav ul { list-style: none; display: flex; gap: 22px; font-size: 15px; }
+  nav ul a { text-decoration: none; color: var(--muted); }
+  nav ul a:hover { color: var(--text); }
+
+  header.hero { padding: 72px 0 64px; }
+  .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 18px; }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(38px, 6vw, 60px); line-height: 1.08; letter-spacing: -0.02em; max-width: 14ch; }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { margin-top: 26px; font-size: 19px; color: var(--muted); max-width: 58ch; }
+  .links { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 15px; text-decoration: none; background: var(--surface); }
+  .btn:hover { border-color: var(--accent); }
+  .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 30px; letter-spacing: -0.01em; margin-bottom: 28px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  p + p { margin-top: 14px; }
+
+  .timeline { list-style: none; }
+  .timeline li { display: grid; grid-template-columns: 140px 1fr; gap: 20px; padding: 16px 0; border-bottom: 1px dashed var(--line); }
+  .timeline li:last-child { border-bottom: 0; }
+  .timeline .when { color: var(--muted); font-size: 14px; padding-top: 2px; }
+  .timeline strong { font-weight: 600; }
+  .timeline span { display: block; color: var(--muted); font-size: 15px; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-decoration: none; transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-2px); color: inherit; }
+  .card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .card p { font-size: 14.5px; color: var(--muted); line-height: 1.55; flex: 1; }
+  .tag { align-self: flex-start; margin-top: 14px; font-size: 12px; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 500; }
+  .more { margin-top: 22px; font-size: 15px; }
+
+  footer { padding: 40px 0 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  @media (max-width: 680px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav ul { gap: 14px; }
+    nav ul li.hide-sm { display: none; }
+    header.hero { padding: 40px 0 48px; }
+    .grid-2 { grid-template-columns: 1fr; gap: 24px; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a class="mark" href="/">PF</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li class="hide-sm"><a href="#path">Path</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="eyebrow">London · Product &amp; technology</div>
+    <h1>Building tools where <em>learning</em>, data and people meet.</h1>
+    <p class="lede">I'm Peter Fotheringham — Head of Solutions Technology at The Smarty Train, founder of Obsrvr, and a Cambridge PhD who still likes writing the Python himself.</p>
+    <div class="links">
+      <a class="btn" href="https://github.com/peterfotheringham" rel="me">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/petefotheringham" rel="me">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.15C0 .52.53 0 1.18 0h13.64C15.47 0 16 .52 16 1.15v13.7c0 .63-.53 1.15-1.18 1.15H1.18C.53 16 0 15.48 0 14.85V1.15zM4.94 13.4V6.17H2.54v7.23h2.4zM3.74 5.18c.84 0 1.36-.56 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm2.53 8.22h2.4V9.36c0-.21.02-.43.08-.58.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.64v3.86h2.4V9.26c0-2.22-1.18-3.25-2.76-3.25-1.29 0-1.86.71-2.17 1.21v.02h-.02l.02-.02V6.17h-2.4c.03.68 0 7.23 0 7.23z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" href="https://orcid.org/0000-0002-9247-4160" rel="me">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zM5.3 11.9H4.3V5h1v6.9zM4.8 4.2a.66.66 0 110-1.32.66.66 0 010 1.32zm7.1 4.3c0 2-1.3 3.4-3.6 3.4H6.6V5h1.8c2.2 0 3.5 1.5 3.5 3.5zm-1.1 0c0-1.3-.7-2.6-2.5-2.6h-.7V11h.7c1.7 0 2.5-1.1 2.5-2.5z"/></svg>
+        ORCID
+      </a>
+      <a class="btn" href="mailto:peter.fotheringham@gmail.com">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M1.75 2h12.5c.97 0 1.75.78 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5C0 2.78.78 2 1.75 2zM1.5 5.06v7.19c0 .14.11.25.25.25h12.5c.14 0 .25-.11.25-.25V5.06L8.4 9.03a.75.75 0 01-.8 0L1.5 5.06zm12.92-1.47a.25.25 0 00-.17-.09H1.75a.25.25 0 00-.17.09L8 7.6l6.42-4z"/></svg>
+        Email
+      </a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="grid-2">
+      <div>
+        <p>I lead solutions technology at The Smarty Train, a London management and transformation consultancy, where I sit on the senior leadership team. I joined in 2021 as Head of Product Design and now look after the tools, platforms and AI work that help our clients — and our own people — change how they work.</p>
+        <p>Before that I founded Obsrvr, a video coaching platform, and took it through to exit.</p>
+      </div>
+      <div>
+        <p>My path runs through education and research: digital transformation at the University of Cambridge, product design consulting for Quizlet, a Cambridge PhD spanning education policy and genomics, and an MBA from Keele (with distinction).</p>
+        <p>These days I spend a lot of time building with AI — agents, internal tools and small apps that remove friction from everyday work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <h2>Selected work</h2>
+    <div class="cards">
+      <a class="card" href="https://github.com/TSTPeter/Runify">
+        <h3>Runify</h3>
+        <p>Links Spotify to Strava so every run gets a write-up of the playlist that powered it.</p>
+        <span class="tag">Python · Cloud Run</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/DayReview">
+        <h3>DayReview</h3>
+        <p>An end-of-day email reviewing the day gone by and what's on deck for tomorrow.</p>
+        <span class="tag">JavaScript</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/RAGsearch">
+        <h3>RAGsearch</h3>
+        <p>An iterative retrieval tool for working through key terms across a document set.</p>
+        <span class="tag">Retrieval · AI</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/PDF2HTML">
+        <h3>PDF2HTML</h3>
+        <p>Turning long-scroll, interactive PDFs (roll-overs, pop-ups) into accessible web pages.</p>
+        <span class="tag">Document tooling</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/PDFOptimizer">
+        <h3>PDFOptimizer</h3>
+        <p>Optimises JavaScript-heavy InDesign PDFs so they behave properly in SharePoint.</p>
+        <span class="tag">TypeScript</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/SharepointManagementTools">
+        <h3>SharePoint Management Tools</h3>
+        <p>PowerShell, Python and VB scripts that shrink storage and flag documents ready for archive.</p>
+        <span class="tag">PowerShell · Python</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/WhackARole">
+        <h3>Whack-a-Role</h3>
+        <p>A fast, silly team game first played at a TST away day.</p>
+        <span class="tag">Game</span>
+      </a>
+      <a class="card" href="https://github.com/TSTPeter/BoardGames">
+        <h3>Board Games</h3>
+        <p>Exemplar board games designed to build understanding of diversity through play.</p>
+        <span class="tag">Learning design</span>
+      </a>
+    </div>
+    <p class="more"><a href="https://github.com/TSTPeter?tab=repositories">More of my work on GitHub (TSTPeter) →</a></p>
+  </section>
+
+  <section id="path">
+    <h2>Path</h2>
+    <ul class="timeline">
+      <li><div class="when">2021 — now</div><div><strong>The Smarty Train</strong><span>Head of Solutions Technology (previously Head of Product Design)</span></div></li>
+      <li><div class="when">Founder</div><div><strong>Obsrvr</strong><span>Video coaching platform — founded, built and exited</span></div></li>
+      <li><div class="when">Consultant</div><div><strong>Quizlet</strong><span>Product design</span></div></li>
+      <li><div class="when">Lead</div><div><strong>University of Cambridge</strong><span>Digital transformation</span></div></li>
+      <li><div class="when">Education</div><div><strong>PhD, University of Cambridge</strong><span>Education policy and genomics</span></div></li>
+      <li><div class="when">Education</div><div><strong>MBA, Keele University</strong><span>Distinction</span></div></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Say hello</h2>
+    <p>Always happy to talk about product, learning technology, or something you're building. The quickest route is <a href="mailto:peter.fotheringham@gmail.com">email</a> or <a href="https://www.linkedin.com/in/petefotheringham">LinkedIn</a>.</p>
+  </section>
+
+  <footer>
+    <span>© <span id="y">2026</span> Peter Fotheringham</span>
+    <span>London, UK</span>
+  </footer>
+
+</div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
